@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Nevaeh 💗</title>
+<style>
+:root{--bg:#fff1f5;--card:#ffffff;--ink:#4a1d33;--soft:#9b5a76;--pink:#ff5c8a;--pink2:#ffc2d6;--sh:0 8px 24px rgba(255,92,138,.18);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1220;--card:#3d1b2f;--ink:#ffe3ec;--soft:#e5a3bb;--pink:#ff7aa2;--pink2:#7a3454;--sh:0 8px 24px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#2a1220;--card:#3d1b2f;--ink:#ffe3ec;--soft:#e5a3bb;--pink:#ff7aa2;--pink2:#7a3454;--sh:0 8px 24px rgba(0,0,0,.35);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Quicksand","Trebuchet MS",system-ui,sans-serif;overflow-x:hidden;line-height:1.5}
+section{max-width:760px;margin:0 auto;padding:56px 18px;position:relative}
+h2{font-size:1.7rem;text-align:center;margin:0 0 6px}
+.sub{text-align:center;color:var(--soft);margin:0 0 28px}
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.hero h1{font-size:clamp(3rem,15vw,6.5rem);line-height:1;margin:0;color:var(--pink);cursor:pointer;user-select:none;text-shadow:0 4px 0 var(--pink2)}
+.hero p{color:var(--soft);font-size:1.15rem;margin-top:18px}
+.arrow{margin-top:30px;font-size:2rem;animation:bob 1.4s infinite}
+@keyframes bob{50%{transform:translateY(10px)}}
+.bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bg span{position:absolute;bottom:-40px;opacity:.5;animation:up linear infinite}
+@keyframes up{to{transform:translateY(-115vh) rotate(25deg)}}
+main,section{z-index:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.card{perspective:800px;height:170px;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit}
+.in{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.card.flip .in{transform:rotateY(180deg)}
+.f,.b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;box-shadow:var(--sh);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;text-align:center}
+.f{background:var(--card);border:2px solid var(--pink2)}
+.f b{font-size:2.2rem;color:var(--pink)}
+.f small{color:var(--soft)}
+.b{background:linear-gradient(135deg,var(--pink),#ff9ab9);color:#fff;transform:rotateY(180deg);font-weight:700;font-size:.95rem}
+.card:hover .f{border-color:var(--pink)}
+#game{position:relative;height:420px;background:var(--card);border-radius:22px;box-shadow:var(--sh);overflow:hidden;touch-action:manipulation;border:2px solid var(--pink2)}
+.hud{display:flex;justify-content:space-between;margin-bottom:10px;font-weight:700}
+.h{position:absolute;top:-50px;font-size:2.4rem;cursor:pointer;user-select:none;-webkit-user-select:none;padding:6px;line-height:1}
+.pop{position:absolute;font-weight:700;color:var(--pink);pointer-events:none;animation:pp .7s forwards}
+@keyframes pp{to{transform:translateY(-40px);opacity:0}}
+.ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;background:color-mix(in srgb,var(--card) 88%,transparent);padding:16px}
+button.btn{background:var(--pink);color:#fff;border:0;border-radius:999px;padding:12px 26px;font:inherit;font-weight:700;cursor:pointer;box-shadow:var(--sh)}
+button.btn:active{transform:scale(.96)}
+.q{background:var(--card);border-radius:20px;padding:18px;margin-bottom:16px;box-shadow:var(--sh);border-left:6px solid var(--pink)}
+.q h3{margin:0 0 10px;font-size:1.05rem}
+.q textarea{width:100%;min-height:80px;border:2px solid var(--pink2);border-radius:14px;padding:10px;font:inherit;background:var(--bg);color:var(--ink);resize:vertical}
+.q textarea:focus{outline:none;border-color:var(--pink)}
+.q .row{display:flex;align-items:center;gap:12px;margin-top:10px;flex-wrap:wrap}
+.st{color:var(--soft);font-size:.9rem}
+.note{background:var(--card);border:2px dashed var(--pink2);border-radius:14px;padding:10px 14px;text-align:center;color:var(--soft);margin-bottom:16px;font-size:.92rem}
+.end{text-align:center;padding:70px 18px 90px}
+.end h2{font-size:clamp(2.2rem,10vw,4rem);color:var(--pink);cursor:pointer}
+.egg{position:absolute;font-size:.9rem;opacity:.18;cursor:pointer;z-index:3;transition:.2s;background:none;border:0;padding:6px}
+.egg:hover,.egg:focus{opacity:1;transform:scale(1.5)}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--pink);color:#fff;padding:12px 20px;border-radius:16px;font-weight:700;opacity:0;transition:.3s;z-index:99;max-width:88vw;text-align:center;pointer-events:none;box-shadow:var(--sh)}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+.fall{position:fixed;top:-40px;z-index:98;pointer-events:none;animation:fl 3s linear forwards}
+@keyframes fl{to{transform:translateY(110vh) rotate(360deg)}}
+.cnt{text-align:center;color:var(--soft);font-size:.85rem;margin-top:8px}
+</style></head>
+<body>
+<div class="bg" id="bg" aria-hidden="true"></div>
+
+<section class="hero">
+  <h1 id="miss">i miss you btw</h1>
+  <p>a tiny website, made just for you, Nevaeh 💗</p>
+  <div class="arrow">⬇️</div>
+  <button class="egg" style="top:18%;left:8%" data-m="psst… you found a secret heart 🤍">🤍</button>
+</section>
+
+<section id="reasons">
+  <h2>10 reasons why i love you 💌</h2>
+  <p class="sub">tap a card to flip it</p>
+  <div class="grid" id="cards"></div>
+  <button class="egg" style="bottom:20px;right:10%" data-m="reason #11: you read all of these cards 😌💗">🤍</button>
+</section>
+
+<section id="gamesec">
+  <h2>catch my hearts 💘</h2>
+  <p class="sub">they’re falling for you… catch them before they hit the ground!</p>
+  <div class="hud"><span>Score: <span id="sc">0</span></span><span id="lv">❤️❤️❤️</span><span>Best: <span id="bs">0</span></span></div>
+  <div id="game"><div class="ov" id="ov"><div style="font-size:2.4rem">💗</div><div>Tap the hearts. Miss 3 and it’s over.<br>🍥 bonus ones are worth 3!</div><button class="btn" id="go">Start</button></div></div>
+  <button class="egg" style="top:60px;left:3%" data-m="you’re the best heart catcher ever 🏆">🤍</button>
+</section>
+
+<section id="qs">
+  <h2>5 questions for you 🥹</h2>
+  <p class="sub">cause i have SO many questions</p>
+  <div class="note" id="note">Write your answers and press “Save” — I’ll be able to read them 💌</div>
+  <div id="qlist"></div>
+</section>
+
+<section class="end">
+  <p class="sub">okay that’s all… almost 💗</p>
+  <h2 id="love">i love you sooo much</h2>
+  <p class="cnt" id="cnt">hidden hearts found: 0 / 6 🤍</p>
+  <button class="egg" style="bottom:24px;left:12%" data-m="p.s. you’re stuck with me 😌💗">🤍</button>
+  <button class="egg" style="bottom:50px;right:6%" data-m="i LOVE you, Nevaeh Marie Castillo 💕 (full name, very official)">🤍</button>
+</section>
+<div id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const toast=(t)=>{const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2600)};
+const rain=(em,n=24)=>{for(let i=0;i<n;i++){const s=document.createElement('span');s.className='fall';s.textContent=em;s.style.left=Math.random()*100+'vw';s.style.fontSize=(18+Math.random()*22)+'px';s.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),4500)}};
+
+// floating background
+const bg=$('#bg');['💗','💕','🤍','💖','✨'].forEach((e,k)=>{for(let i=0;i<4;i++){const s=document.createElement('span');s.textContent=e;s.style.left=Math.random()*100+'%';s.style.fontSize=(14+Math.random()*16)+'px';s.style.animationDuration=(14+Math.random()*14)+'s';s.style.animationDelay=(-Math.random()*20)+'s';bg.appendChild(s)}});
+
+// easter eggs tracker
+const found=new Set();
+const upd=()=>{$('#cnt').textContent='hidden hearts found: '+found.size+' / 6 🤍'+(found.size>=6?' — you found them ALL, I love you 💘':'')};
+const find=(k,m)=>{toast(m);if(!found.has(k)){found.add(k);upd();if(found.size===6){rain('💖',40)}}};
+document.querySelectorAll('.egg').forEach((b,i)=>b.addEventListener('click',()=>find('e'+i,b.dataset.m)));
+let mc=0;$('#miss').addEventListener('click',()=>{mc++;if(mc===5){find('miss','i miss you even more now 🥺💗');rain('🥺',16);mc=0}else if(mc===1)toast('click me 5 times… 👀')});
+$('#love').addEventListener('click',()=>{find('love','i really really do 💞');rain('💗',30)});
+let buf='';addEventListener('keydown',e=>{buf=(buf+e.key.toLowerCase()).slice(-6);if(buf==='naruto'){find('naruto','Dattebayo! 🍥 I love you more than ramen');rain('🍥',24)}});
+
+// cards
+const reasons=[
+['🎨','You actually have amazing tastes (in absolutely everything)'],
+['🧮','You are very smart, like you find math easyyy'],
+['🌸','You are matureee and I LOVE that'],
+['🫶','You are super kind and nice, never been mean'],
+['🍥','You love Naruto ayyyy'],
+['🤝','We agree on 99% of things, and that’s rare'],
+['☀️','You always manage to make me happy just by being yourself (you are amazing, I love you so much)'],
+['🧸','You’re always understanding, I also love that about you'],
+['✨','Your personality is perfect, like just perfect'],
+['🥹','YOU LOVE ME TOO 🥹 (still didn’t process this information in my head)']];
+const cg=$('#cards');
+reasons.forEach((r,i)=>{const c=document.createElement('button');c.className='card';c.innerHTML='<div class="in"><div class="f"><b>'+(i+1)+'</b><span style="font-size:1.8rem">'+r[0]+'</span><small>tap me</small></div><div class="b">'+r[1]+'</div></div>';
+c.addEventListener('click',()=>{c.classList.toggle('flip');if(i===9&&c.classList.contains('flip'))rain('💖',30)});cg.appendChild(c)});
+
+// game
+const G=$('#game');let run=false,score=0,lives=3,best=0,items=[],spawnT=0,last=0,rate=1100,speed=140;
+try{best=+localStorage.getItem('nbest')||0}catch(e){}$('#bs').textContent=best;
+const heartsList=['💗','💖','💕','💘','❤️'];
+function spawn(){const bonus=Math.random()<.12;const el=document.createElement('div');el.className='h';el.textContent=bonus?'🍥':heartsList[Math.floor(Math.random()*5)];
+const x=Math.random()*(G.clientWidth-56);el.style.left=x+'px';G.appendChild(el);
+const it={el,y:-50,v:speed*(.8+Math.random()*.5),bonus};
+const hit=ev=>{ev.preventDefault();if(!run||it.dead)return;it.dead=true;score+=bonus?3:1;$('#sc').textContent=score;const p=document.createElement('div');p.className='pop';p.textContent=bonus?'+3 dattebayo!':'+1';p.style.left=el.style.left;p.style.top=it.y+'px';G.appendChild(p);setTimeout(()=>p.remove(),700);el.remove();
+if(score===10)toast('10 hearts! you’re amazing 💗');if(score===25)find('g25','25 hearts?! you caught my whole heart 💘')};
+el.addEventListener('pointerdown',hit);items.push(it)}
+function loop(t){if(!run)return;const dt=Math.min(50,t-last)/1000;last=t;spawnT+=dt*1000;
+if(spawnT>rate){spawnT=0;spawn();rate=Math.max(380,rate-14);speed=Math.min(330,speed+2.5)}
+const H=G.clientHeight-46;
+for(const it of items){if(it.dead)continue;it.y+=it.v*dt;it.el.style.top=it.y+'px';
+if(it.y>H){it.dead=true;it.el.remove();if(!it.bonus){lives--;$('#lv').textContent='❤️'.repeat(Math.max(lives,0))+'🖤'.repeat(3-Math.max(lives,0));if(lives<=0)return end()}}}
+items=items.filter(i=>!i.dead);requestAnimationFrame(loop)}
+function end(){run=false;items.forEach(i=>i.el.remove());items=[];
+if(score>best){best=score;$('#bs').textContent=best;try{localStorage.setItem('nbest',best)}catch(e){}}
+const ov=$('#ov');ov.style.display='flex';ov.querySelector('div:nth-child(2)').innerHTML='Game over 💔<br>You caught <b>'+score+'</b> hearts'+(score>=15?'<br>You’re officially my favorite person 💗':'<br>Try again, you got this!');$('#go').textContent='Play again'}
+$('#go').addEventListener('click',()=>{score=0;lives=3;rate=1100;speed=140;spawnT=0;$('#sc').textContent=0;$('#lv').textContent='❤️❤️❤️';$('#ov').style.display='none';run=true;last=performance.now();requestAnimationFrame(loop)});
+
+// questions
+const qs=['Since when do you love me?','What made you actually start loving me at first? (be preciseeee)','Did you give me any hints before? If yes, where, cause I didn’t catch any 💔','How have you been for the past two days? Cause for me there were the best ever thanks to you 🥹','Do you love this kind of things? Cause idk maybe it’s too muchhh'];
+const ql=$('#qlist'),areas=[],stat=[];let db=null,dirty=[];
+qs.forEach((q,i)=>{const d=document.createElement('div');d.className='q';d.innerHTML='<h3>'+(i+1)+'. '+q+'</h3><textarea placeholder="Your answer…" aria-label="Answer '+(i+1)+'"></textarea><div class="row"><button class="btn">Save 💌</button><span class="st"></span></div>';
+ql.appendChild(d);const ta=d.querySelector('textarea'),st=d.querySelector('.st');areas.push(ta);stat.push(st);
+ta.addEventListener('input',()=>{dirty[i]=true;st.textContent=''});
+d.querySelector('button').addEventListener('click',async()=>{
+const text=ta.value.trim();if(!text){st.textContent='Write something first 🥺';return}
+try{try{localStorage.setItem('na'+i,text)}catch(e){}
+if(db){await db.collection('answers').doc('q'+(i+1)).set({q:i+1,question:q,text,ts:Date.now()});dirty[i]=false;st.textContent='Saved 💗 thank you!';rain('💗',10)}
+else{st.textContent='Saved on this device only 🥲';fallback()}}catch(e){st.textContent='Couldn’t save 😢 try again';fallback()}})});
+function fallback(){const n=$('#note');n.innerHTML='Saving online isn’t available here 🥲 — tap to copy your answers and send them to me 💌 <br><button class="btn" id="cp" style="margin-top:8px">Copy my answers</button>';
+$('#cp').onclick=async()=>{const t=qs.map((q,i)=>(i+1)+'. '+q+'\n'+(areas[i].value||'(no answer yet)')).join('\n\n');try{await navigator.clipboard.writeText(t);toast('Copied! Now send it to me 💌')}catch(e){toast('Select the text and copy it manually 💗')}}}
+try{qs.forEach((_,i)=>{const v=localStorage.getItem('na'+i);if(v)areas[i].value=v})}catch(e){}
+(async()=>{try{if(!window.claude)throw 0;db=await Promise.race([claude.use('db'),new Promise(r=>setTimeout(()=>r(null),10000))]);
+if(!db){fallback();return}
+db.collection('answers').onSnapshot(s=>{s.docs.forEach(d=>{const x=d.data()||{};const i=(x.q||0)-1;if(i>=0&&i<5&&!dirty[i]){areas[i].value=x.text||'';stat[i].textContent=x.ts?'Saved 💗':''}})},()=>{})}catch(e){fallback()}})();
+</script>
+</body></html>
